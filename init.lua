@@ -12,12 +12,14 @@ opt.relativenumber = true
 
 -- tabs & intendation
 opt.tabstop = 4
+opt.expandtab = true
 opt.shiftwidth = 4
 opt.autoindent = true
 
 -- search
 opt.ignorecase = true
 opt.smartcase = true
+opt.termguicolors = true
 
 --setting up lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -33,7 +35,5 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {}
-local opts = {}
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup("plugins")
