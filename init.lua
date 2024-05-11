@@ -3,25 +3,8 @@ vim.g.mapleader = " "
 --setting up pwsh as the default terminal
 
 
---OPTIONS HERE:
-local opt = vim.opt -- aliasing
-
--- line number
-opt.number = true
-opt.relativenumber = true
-
--- tabs & intendation
-opt.tabstop = 4
-opt.expandtab = true
-opt.shiftwidth = 4
-opt.autoindent = true
-
--- search
-opt.ignorecase = true
-opt.smartcase = true
-opt.termguicolors = true
-
 --setting up lazy
+require("options")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
@@ -35,5 +18,5 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
+require("keymaps")
 require("lazy").setup("plugins")
