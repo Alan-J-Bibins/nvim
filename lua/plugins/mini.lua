@@ -5,7 +5,7 @@ return {
         require("mini.pairs").setup()
         require("mini.pairs").setup()
         require("mini.indentscope").setup({
-            symbol = '|'
+            symbol = "|",
         })
         require("mini.comment").setup()
         require("mini.move").setup()
