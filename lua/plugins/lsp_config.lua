@@ -1,5 +1,5 @@
 return {
-    {
+   {
         "williamboman/mason.nvim",
         config = function()
             require("mason").setup()
@@ -10,7 +10,7 @@ return {
         config = function()
             local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "pyright" , "clangd"},
+                ensure_installed = { "lua_ls", "pyright" , "clangd", "html", "cssls", "tsserver", "markdown_oxide"},
                 handlers = {
                     function(server_name)
                         require("lspconfig")[server_name].setup({
