@@ -8,12 +8,14 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
+            local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls" },
+                ensure_installed = { "lua_ls", "pyright" },
                 handlers = {
                     function(server_name)
-                        require("lspconfig")[server_name].setup({}) --automatically setup the lsp servers!!!
-                        -- TODO: dont forget to add capabilities after adding cmp support
+                        require("lspconfig")[server_name].setup({
+                            capabilities = lsp_capabilities
+                        }) --automatically setup the lsp servers!!!
                     end,
                 },
             })
