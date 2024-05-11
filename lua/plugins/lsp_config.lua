@@ -45,5 +45,3 @@ return {
         end,
     },
 }
-
---typecraft lsp vid time 8:51
