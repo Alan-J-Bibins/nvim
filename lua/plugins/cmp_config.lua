@@ -19,6 +19,9 @@ return {
             require("luasnip.loaders.from_vscode").lazy_load()
 
             cmp.setup({
+                completion = {
+                    completeopt = 'menu,menuone,noinsert'
+                },
                 snippet = {
                     expand = function(args)
                         require('luasnip').lsp_expand(args.body)
@@ -39,7 +42,7 @@ return {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' }, -- For luasnip users.
                     { name = 'path' },
-                    { name = 'buffer',  keyword_length = 3 },
+                    { name = 'buffer' },
                 }, {
                     { name = 'buffer' },
                 })
