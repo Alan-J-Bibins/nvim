@@ -10,6 +10,7 @@ opt.softtabstop = 4
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.autoindent = true
+opt.wrap = false
 
 -- search
 opt.ignorecase = true

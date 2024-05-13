@@ -13,6 +13,8 @@ return {
             vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Find Buffers" })
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Telescope Help Tags" })
             vim.keymap.set('n', '<leader>fc', builtin.current_buffer_fuzzy_find, { desc = "Fuzzily Find In Current Buffer" })
+            vim.keymap.set('n', '<leader>fr', "<CMD>Telescope oldfiles<CR>", {desc = "Find Recent Files"})
+
 
             require("telescope").setup({
                 extensions = {
