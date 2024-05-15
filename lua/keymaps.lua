@@ -33,7 +33,5 @@ map.set("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" }
 -- windows
 map.set("n", "<leader>ww", "<C-W>p", { desc = "Other Window" })
 map.set("n", "<leader>wd", "<C-W>c", { desc = "Delete Window" })
-map.set("n", "<leader>w-", "<C-W>s", { desc = "Split Window Below" })
-map.set("n", "<leader>w|", "<C-W>v", { desc = "Split Window Right" })
 map.set("n", "<leader>-", "<C-W>s", { desc = "Split Window Below" })
 map.set("n", "<leader>|", "<C-W>v", { desc = "Split Window Right" })
