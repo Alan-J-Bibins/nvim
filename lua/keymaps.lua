@@ -1,6 +1,8 @@
 --Miscalleaneous keymaps go here
 local map = vim.keymap
 
+map.set('i', '<C-h>', '<C-w>') --ctrl backspace support, idk why this is ctrl h in neovim but ya
+
 map.set('n', '<C-d>', '<C-d>zz')
 map.set('n', '<C-u>', '<C-u>zz')
 map.set('n', '<leader>p' , '\"_dP')
