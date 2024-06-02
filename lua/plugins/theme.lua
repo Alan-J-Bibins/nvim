@@ -6,7 +6,7 @@ return {
         priority = 1000,
         config = function()
             require('nightfox').setup()
-            vim.cmd.colorscheme "terafox"
+            vim.cmd.colorscheme "nightfox"
         end,
     },
     {
@@ -19,7 +19,7 @@ return {
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = 'terafox',
+                    theme = 'nightfox',
                 }
             })
         end
