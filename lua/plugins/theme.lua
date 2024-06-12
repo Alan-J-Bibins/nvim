@@ -5,7 +5,12 @@ return {
         "EdenEast/nightfox.nvim",
         priority = 1000,
         config = function()
-            require('nightfox').setup()
+            local options = {
+                transparent = true
+            }
+            require('nightfox').setup({
+                options = options
+            })
             vim.cmd.colorscheme "nightfox"
         end,
     },
