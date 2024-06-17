@@ -8,9 +8,9 @@ return {
                 formatters_by_ft = {
                     lua = { "stylua" },
                     python = { "black" },
-                    html = { "prettier" },
-                    css = { "prettier" },
-                    javascript = { "prettier" },
+                    html = { "prettierd" },
+                    css = { "prettierd" },
+                    javascript = { "prettierd" },
                 },
                 -- format_on_save = {
                 -- 	timeout_ms = 500,

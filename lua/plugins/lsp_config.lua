@@ -3,7 +3,9 @@ return {
     {
         "williamboman/mason.nvim",
         config = function()
-            require("mason").setup()
+            require("mason").setup({
+                ensure_installed = {"prettierd"},
+            })
         end,
     },
     {
@@ -11,7 +13,7 @@ return {
         config = function()
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
             require("mason-lspconfig").setup({
-                ensure_installed = { "eslint", "lua_ls", "pyright", "clangd", "html", "cssls", "tsserver", "tailwindcss", "markdown_oxide" },
+                ensure_installed = {"eslint", "lua_ls", "pyright", "clangd", "html", "cssls", "tsserver", "tailwindcss", "markdown_oxide" },
                 handlers = {
                     function(server_name)
                         require("lspconfig")[server_name].setup({
