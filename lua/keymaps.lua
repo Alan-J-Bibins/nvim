@@ -35,3 +35,5 @@ map.set("n", "<leader>ww", "<C-W>p", { desc = "Other Window" })
 map.set("n", "<leader>wd", "<C-W>c", { desc = "Delete Window" })
 map.set("n", "<leader>-", "<C-W>s", { desc = "Split Window Below" })
 map.set("n", "<leader>|", "<C-W>v", { desc = "Split Window Right" })
+
+map.set('n', '<leader>xb', '<cmd>bdelete<cr>', { desc = "Delete current buffer" })
