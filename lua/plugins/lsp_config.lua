@@ -68,7 +68,7 @@ return {
                     end, opts)
                     vim.keymap.set("n", "<F2>", function()
                         vim.lsp.buf.rename()
-                    end, opts)
+                    end, { desc = "Rename"})
                     vim.keymap.set("n", "<F4>", function()
                         vim.lsp.buf.code_action()
                     end, opts)
