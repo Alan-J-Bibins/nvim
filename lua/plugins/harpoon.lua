@@ -5,6 +5,7 @@ return {
     config = function()
         local harpoon = require('harpoon')
         harpoon:setup({})
+        require("harpoon"):extend(require("harpoon.extensions").builtins.command_on_nav('UfoEnableFold'))
 
         -- basic telescope configuration
         -- local conf = require("telescope.config").values
