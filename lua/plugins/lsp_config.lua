@@ -18,8 +18,17 @@ return {
                     function(server_name)
                         require("lspconfig")[server_name].setup({
                             capabilities = lsp_capabilities,
-                        })     --automatically setup the lsp servers!!!
+                        }) --automatically setup the lsp servers!!!
                     end,
+                    --put specific server handlers down here
+                    ["clangd"] = function()
+                        require("lspconfig").clangd.setup {
+                            cmd = {
+                                "clangd",
+                                "--fallback-style=webkit"
+                            }
+                        }
+                    end
                 },
             })
         end,
