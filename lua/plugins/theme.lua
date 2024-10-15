@@ -23,9 +23,6 @@ return {
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             require("lualine").setup({
-                options = {
-                    theme = 'nightfox',
-                }
             })
         end
     },

@@ -16,6 +16,7 @@ return {
                 { desc = "Fuzzily Find In Current Buffer" })
             vim.keymap.set('n', '<leader>fr', "<CMD>Telescope oldfiles<CR>", { desc = "Find Recent Files" })
             vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = "Find Document Symbols" })
+            vim.keymap.set('n', '<leader>cc', "<CMD>Telescope colorscheme<CR>", { desc = "Find Document Symbols" })
 
 
             require("telescope").setup({
@@ -26,6 +27,9 @@ return {
                     }
                 },
                 pickers = {
+                    colorscheme = {
+                        enable_preview = true,
+                    },
                     buffers = {
                         show_all_buffers = true,
                         sort_mru = true,
