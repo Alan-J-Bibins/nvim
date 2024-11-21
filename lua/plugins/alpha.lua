@@ -23,8 +23,9 @@ return {
             dashboard.button("n", "  > New file", ":ene <BAR> startinsert <CR>"),
             dashboard.button("b", "  > Browse files", ":Oil --float<CR>"),
             dashboard.button("f", "󰈞  > Find file", ":Telescope find_files<CR>"),
+            dashboard.button("l", "  > Live Grep", ":Telescope live_grep<CR>"),
             dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
-            dashboard.button("c", "  > Config", ":e $MYVIMRC <CR>"),
+            dashboard.button("c", "  > Config", ":e $MYVIMRC | :cd %:p:h <CR>"),
             dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
         }
 

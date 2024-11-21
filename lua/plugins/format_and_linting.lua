@@ -11,6 +11,9 @@ return {
                     html = { "prettierd" },
                     css = { "prettierd" },
                     javascript = { "prettierd" },
+                    bash = { "shfmt" },
+                    sh = { "shfmt" },
+                    zsh = { "shfmt" },
                 },
                 -- format_on_save = {
                 -- 	timeout_ms = 500,
