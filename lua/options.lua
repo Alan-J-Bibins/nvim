@@ -19,3 +19,4 @@ opt.termguicolors = true
 
 opt.scrolloff = 8
 
+vim.g.mkdp_browser = 'firefox'

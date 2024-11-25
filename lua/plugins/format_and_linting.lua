@@ -14,6 +14,7 @@ return {
                     bash = { "shfmt" },
                     sh = { "shfmt" },
                     zsh = { "shfmt" },
+                    go = { "gofmt" },
                 },
                 -- format_on_save = {
                 -- 	timeout_ms = 500,
