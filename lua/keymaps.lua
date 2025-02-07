@@ -5,8 +5,9 @@ map.set('i', '<C-h>', '<C-w>') --ctrl backspace support, idk why this is ctrl h 
 
 map.set('n', '<C-d>', '<C-d>zz')
 map.set('n', '<C-u>', '<C-u>zz')
-map.set('n', '<leader>p' , '\"_dP')
-map.set('n', '<leader>y' , '\"+y') --yank to system clipboard
+map.set('n', '<leader>P', '\"_dP')
+vim.keymap.set('n', '<leader>p', '"+p', { desc = "Paste from system clipboard" })
+map.set('n', '<leader>y', '\"+y', { desc = "Yank to clipboard" })
 map.set("v", "<leader>y", '"+y', { desc = "Yank to clipboard" })
 map.set("n", "<leader>Y", '"+Y', { desc = "Yank to clipboard" })
 

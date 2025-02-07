@@ -20,6 +20,14 @@ return {
         end,
     },
     {
+        "rebelot/kanagawa.nvim",
+        config = function()
+            require('kanagawa').setup({
+                transparent = true,
+            })
+        end,
+    },
+    {
         "neanias/everforest-nvim",
         config = function()
             require("everforest").setup({

@@ -46,6 +46,9 @@ return {
                     }
                 },
                 pickers = {
+                    find_files = {
+                        hidden = true
+                    },
                     colorscheme = {
                         enable_preview = true,
                     },
