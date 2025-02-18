@@ -30,7 +30,8 @@ return {
             require("telescope").setup({
                 defaults = {
                     file_ignore_patterns = {
-                        "node_modules"
+                        "node_modules",
+                        ".git"
                     }
                 },
                 extensions = {
@@ -47,7 +48,8 @@ return {
                 },
                 pickers = {
                     find_files = {
-                        hidden = true
+                        hidden = true,
+                        find_command = { 'fd', '--type', 'f', '--hidden', '--follow', '--exclude', '.git' }
                     },
                     colorscheme = {
                         enable_preview = true,
