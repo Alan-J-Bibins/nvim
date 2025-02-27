@@ -1,7 +1,27 @@
 return {
     "folke/snacks.nvim",
+    priority = 1000,
     ---@type snacks.Config
     opts = {
+        indent = {
+            enable = true,
+            indent = {
+                enabled = true,
+                hl = "SnacksIndent",
+            },
+            scope = {
+                enabled = true, -- enable highlighting the current scope
+                priority = 200,
+                char = "│",
+                underline = false,    -- underline the start of the scope
+                only_current = false, -- only show scope in the current window
+                hl = "SnacksDashboardKey", ---@type string|string[] hl group for scopes
+            },
+            chunk = {
+                enabled = false,
+                hl = "SnacksDashboardKey",
+            },
+        },
         dashboard = {
             enabled = true,
             sections = {
