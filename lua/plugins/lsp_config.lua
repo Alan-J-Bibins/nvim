@@ -38,19 +38,24 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
-            vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-                border = "rounded",
-            })
+            -- vim.lsp.buf.hover({
+            --     border = "rounded",
+            -- })
 
             vim.keymap.set("n", "gl", function()
                 vim.diagnostic.open_float()
             end)
-            vim.keymap.set("n", "[d", function()
-                vim.diagnostic.goto_prev()
-            end)
-            vim.keymap.set("n", "]d", function()
-                vim.diagnostic.goto_next()
-            end)
+
+            local hover = vim.lsp.buf.hover
+            ---@diagnostic disable-next-line: duplicate-set-field
+            vim.lsp.buf.hover = function()
+                return hover({
+                    border = "rounded",
+                    -- max_width = 100,
+                    max_width = math.floor(vim.o.columns * 0.7),
+                    max_height = math.floor(vim.o.lines * 0.7),
+                })
+            end
             vim.api.nvim_create_autocmd("LspAttach", {
                 desc = "LSP actions",
                 callback = function(event)

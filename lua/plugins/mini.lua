@@ -8,6 +8,9 @@ return {
         --     symbol = "|",
         -- })
         require("mini.comment").setup()
+        require("mini.files").setup()
         require("mini.move").setup()
+
+        vim.keymap.set('n', '<leader>e', ':lua MiniFiles.open()<CR>', {desc = "Open mini files"})
     end
 }

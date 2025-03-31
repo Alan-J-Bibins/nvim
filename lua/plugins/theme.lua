@@ -40,7 +40,10 @@ return {
         name = "neopywal",
         lazy = false,
         priority = 1000,
-        opts = {},
+        opts = {
+            use_wallust = true,
+            transparent_background = true,
+        },
     },
     {
         'nvim-lualine/lualine.nvim',

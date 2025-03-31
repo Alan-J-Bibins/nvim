@@ -4,7 +4,7 @@ local opt = vim.opt -- aliasing
 opt.number = true
 opt.relativenumber = true
 
--- tabs & intendation
+-- tabs & indentation
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.expandtab = true
@@ -18,5 +18,6 @@ opt.smartcase = true
 opt.termguicolors = true
 
 opt.scrolloff = 8
+vim.o.winborder = 'none'
 
 vim.g.mkdp_browser = 'firefox'
