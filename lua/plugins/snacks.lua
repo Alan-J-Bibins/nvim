@@ -3,6 +3,7 @@ return {
     priority = 1000,
     ---@type snacks.Config
     opts = {
+        quickfile = { enabled = true },
         indent = {
             enable = true,
             indent = {
