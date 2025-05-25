@@ -49,6 +49,10 @@ return {
                 completion = {
                     completeopt = 'menu,menuone,noinsert'
                 },
+                performance = {
+                    fetching_timeout = 20;
+                    max_view_entries = 15;
+                },
                 snippet = {
                     expand = function(args)
                         require('luasnip').lsp_expand(args.body)

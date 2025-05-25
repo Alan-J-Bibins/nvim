@@ -14,7 +14,7 @@ return {
         config = function()
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
             require("mason-lspconfig").setup({
-                ensure_installed = { "rust_analyzer", "gopls", "bashls", "jdtls", "eslint", "lua_ls", "pyright", "clangd",
+                ensure_installed = { "rust_analyzer", "gopls", "bashls", "eslint", "lua_ls", "pyright", "clangd", "jdtls",
                     "html", "cssls", "ts_ls", "tailwindcss", "markdown_oxide" },
                 handlers = {
                     function(server_name)
