@@ -2,7 +2,8 @@
 --commented keymaps are taken care of by telescope
 return {
     {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
+        version = "^1.0.0",
         config = function()
             require("mason").setup({
                 ensure_installed = { "prettierd", "shfmt" },
@@ -10,7 +11,8 @@ return {
         end,
     },
     {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
+        version = "^1.0.0",
         config = function()
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
             require("mason-lspconfig").setup({
@@ -50,7 +52,7 @@ return {
             ---@diagnostic disable-next-line: duplicate-set-field
             vim.lsp.buf.hover = function()
                 return hover({
-                    border = "rounded",
+                    border = "none",
                     -- max_width = 100,
                     max_width = math.floor(vim.o.columns * 0.7),
                     max_height = math.floor(vim.o.lines * 0.7),
