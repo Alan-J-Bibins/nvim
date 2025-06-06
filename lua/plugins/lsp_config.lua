@@ -16,7 +16,7 @@ return {
         config = function()
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
             require("mason-lspconfig").setup({
-                ensure_installed = { "rust_analyzer", "gopls", "bashls", "eslint", "lua_ls", "pyright", "clangd", "jdtls",
+                ensure_installed = { "rust_analyzer", "gopls", "bashls", "eslint", "lua_ls", "basedpyright", "clangd", "jdtls",
                     "html", "cssls", "ts_ls", "tailwindcss", "markdown_oxide" },
                 handlers = {
                     function(server_name)
@@ -52,7 +52,7 @@ return {
             ---@diagnostic disable-next-line: duplicate-set-field
             vim.lsp.buf.hover = function()
                 return hover({
-                    border = "none",
+                    border = "rounded",
                     -- max_width = 100,
                     max_width = math.floor(vim.o.columns * 0.7),
                     max_height = math.floor(vim.o.lines * 0.7),
@@ -92,6 +92,7 @@ return {
                     end, opts)
                 end,
             })
+
         end,
     },
 }
