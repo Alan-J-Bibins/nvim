@@ -1,4 +1,12 @@
+-- Plugins related to quickfixlist / loclists
 return {
+    {
+        'stevearc/quicker.nvim',
+        event = "FileType qf",
+        ---@module "quicker"
+        ---@type quicker.SetupOptions
+        opts = {},
+    },
     {
         "folke/trouble.nvim",
         opts = {

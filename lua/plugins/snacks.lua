@@ -4,6 +4,7 @@ return {
     ---@type snacks.Config
     opts = {
         quickfile = { enabled = true },
+        input = { enabled = true },
         indent = {
             enable = true,
             indent = {

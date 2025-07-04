@@ -28,7 +28,6 @@ return {
                             gitsigns.nav_hunk('prev')
                         end
                     end)
-
                     -- Actions
                     map('n', '<leader>hs', gitsigns.stage_hunk)
                     map('n', '<leader>hr', gitsigns.reset_hunk)
@@ -55,9 +54,13 @@ return {
         config = function()
             require('gitblame').setup {
                 enabled = false,
+                message_template = " <summary> • <date> • <author> • <<sha>>"
             }
 
             vim.keymap.set("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
         end
+    },
+    {
+        'sindrets/diffview.nvim',
     }
 }
