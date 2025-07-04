@@ -3,7 +3,6 @@
 return {
     {
         "mason-org/mason.nvim",
-        version = "^1.0.0",
         config = function()
             require("mason").setup({
                 ensure_installed = { "prettierd", "shfmt" },
@@ -12,11 +11,11 @@ return {
     },
     {
         "mason-org/mason-lspconfig.nvim",
-        version = "^1.0.0",
         config = function()
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
             require("mason-lspconfig").setup({
-                ensure_installed = { "rust_analyzer", "gopls", "bashls", "eslint", "lua_ls", "basedpyright", "clangd", "jdtls",
+                ensure_installed = { "rust_analyzer", "gopls", "bashls", "eslint", "lua_ls", "basedpyright", "clangd",
+                    "jdtls",
                     "html", "cssls", "ts_ls", "tailwindcss", "markdown_oxide" },
                 handlers = {
                     function(server_name)
@@ -31,6 +30,11 @@ return {
                                 "clangd",
                                 "--fallback-style=webkit"
                             }
+                        }
+                    end,
+                    ["qmlls"] = function()
+                        require("lspconfig").qmlls.setup {
+                            cmd = { "qmlls", "-E" }
                         }
                     end
                 },
@@ -92,7 +96,6 @@ return {
                     end, opts)
                 end,
             })
-
         end,
     },
 }
