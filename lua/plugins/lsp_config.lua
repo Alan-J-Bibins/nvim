@@ -7,6 +7,7 @@ return {
 			{ "mason-org/mason.nvim", opts = {} },
 			"neovim/nvim-lspconfig",
 		},
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local servers = {
 				"rust_analyzer",

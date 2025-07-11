@@ -3,8 +3,8 @@ local map = vim.keymap
 
 map.set('i', '<C-h>', '<C-w>') --ctrl backspace support, idk why this is ctrl h in neovim but ya
 
--- map.set('n', '<C-d>', '<C-d>zz')
--- map.set('n', '<C-u>', '<C-u>zz')
+map.set('n', '<C-d>', '<C-d>zz')
+map.set('n', '<C-u>', '<C-u>zz')
 map.set('n', '<leader>P', '\"_dP')
 vim.keymap.set('n', '<leader>p', '"+p', { desc = "Paste from system clipboard" })
 map.set('n', '<leader>y', '\"+y', { desc = "Yank to clipboard" })
