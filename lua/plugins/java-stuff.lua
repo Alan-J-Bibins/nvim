@@ -1,5 +1,6 @@
 return {
     'nvim-java/nvim-java',
+    event = "VeryLazy"
     -- config = function()
     --     require('java').setup({
     --         java_test = {
