@@ -1,6 +1,6 @@
 return {
 	{
-		"karb94/neoscroll.nvim",
+	"karb94/neoscroll.nvim",
 		config = function()
 			require("neoscroll").setup({
 				mappings = { -- Keys to be mapped to their corresponding default scrolling animation
@@ -50,7 +50,10 @@ return {
 			vim.diagnostic.config({ virtual_text = false })
 			require("tiny-inline-diagnostic").setup({
 				options = {
-					multilines = true,
+					multilines = {
+                        enabled = true,
+                        always_show = true
+                    },
 				},
 			})
 		end,

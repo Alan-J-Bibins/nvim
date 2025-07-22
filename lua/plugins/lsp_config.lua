@@ -24,9 +24,15 @@ return {
 				"tailwindcss",
 				"markdown_oxide",
 			}
+
 			require("mason-lspconfig").setup({
 				ensure_installed = servers,
-				automatic_enable = true,
+				automatic_enable = {
+					enabled = true,
+					exclude = {
+						"clangd",
+					},
+				},
 			})
 		end,
 	},
@@ -38,12 +44,15 @@ return {
 			-- })
 
 			-- Setting up all lsps to use blink's capabilities
+			local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig_util = require("lspconfig").util
-			lspconfig_util.default_config.capabilities = vim.tbl_deep_extend(
-				"force",
-				lspconfig_util.default_config.capabilities,
-				require("blink.cmp").get_lsp_capabilities()
-			)
+			lspconfig_util.default_config.capabilities =
+				vim.tbl_deep_extend("force", lspconfig_util.default_config.capabilities, blink_capabilities)
+
+			require("lspconfig").clangd.setup({
+				cmd = { "clangd", "--fallback-style=webkit" },
+				capabilities = blink_capabilities,
+			})
 
 			vim.keymap.set("n", "gl", function()
 				vim.diagnostic.open_float()
