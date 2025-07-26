@@ -1,44 +1,44 @@
 return {
-	-- {
-	-- 	"stevearc/oil.nvim",
-	-- 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	-- 	config = function()
-	-- 		-- vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-	-- 		require("oil").setup({
-	-- 			default_file_explorer = true,
-	-- 			view_options = {
-	-- 				show_hidden = true,
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
 	{
-		"A7Lavinraj/fyler.nvim",
+		"stevearc/oil.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			default_explorer = true,
-			icon_provider = "nvim-web-devicons",
-			views = {
-				explorer = {
-					width = 0.3,
-					kind = "split:leftmost",
+		config = function()
+			vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+			require("oil").setup({
+				default_file_explorer = true,
+				view_options = {
+					show_hidden = true,
 				},
-			},
-			mappings = {
-				explorer = {
-					n = {
-						["q"] = "CloseView",
-						["<CR>"] = "Select",
-					},
-				},
-			},
-		},
-
-		config = function(_, opts)
-			require("fyler").setup(opts)
-			vim.keymap.set("n", "-", "<CMD>Fyler<CR>", { desc = "Open Fyler" })
+			})
 		end,
 	},
+	-- {
+	-- 	"A7Lavinraj/fyler.nvim",
+	-- 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	-- 	opts = {
+	-- 		default_explorer = true,
+	-- 		icon_provider = "nvim-web-devicons",
+	-- 		views = {
+	-- 			explorer = {
+	-- 				width = 0.3,
+	-- 				kind = "split:leftmost",
+	-- 			},
+	-- 		},
+	-- 		mappings = {
+	-- 			explorer = {
+	-- 				n = {
+	-- 					["q"] = "CloseView",
+	-- 					["<CR>"] = "Select",
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	--
+	-- 	config = function(_, opts)
+	-- 		require("fyler").setup(opts)
+	-- 		vim.keymap.set("n", "-", "<CMD>Fyler<CR>", { desc = "Open Fyler" })
+	-- 	end,
+	-- },
 	{
 		"tversteeg/registers.nvim",
 		cmd = "Registers",
