@@ -20,4 +20,7 @@ opt.termguicolors = true
 opt.scrolloff = 8
 vim.o.winborder = 'none'
 
+opt.swapfile = false
+opt.undofile = true
+
 vim.g.mkdp_browser = 'firefox'

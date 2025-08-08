@@ -17,7 +17,6 @@ return {
 				"lua_ls",
 				"basedpyright",
 				"clangd",
-				"jdtls",
 				"html",
 				"cssls",
 				"ts_ls",
@@ -39,10 +38,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			-- vim.lsp.buf.hover({
-			--     border = "rounded",
-			-- })
-
 			-- Setting up all lsps to use blink's capabilities
 			local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
 			local lspconfig_util = require("lspconfig").util
