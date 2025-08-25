@@ -238,9 +238,17 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-        opts = {
-            multiline_threshold = 20,
-            max_lines = 5,
-        }
+		opts = {
+			multiline_threshold = 20,
+			max_lines = 5,
+		},
+	},
+	{
+		"jiaoshijie/undotree",
+		dependencies = "nvim-lua/plenary.nvim",
+		config = true,
+		keys = { -- load the plugin only when using it's keybinding:
+			{ "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
+		},
 	},
 }
