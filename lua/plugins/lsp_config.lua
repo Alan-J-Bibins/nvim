@@ -53,6 +53,14 @@ return {
 			})
 			vim.lsp.enable("clangd")
 
+			vim.lsp.config("glsl_analyzer", {
+				cmd = { "glsl_analyzer" }, -- Default stdio mode [web:25]
+				capabilities = blink_capabilities,
+				filetypes = { "glsl" }, -- Supports .glsl, .vert, .frag, etc.
+				root_markers = { ".git" },
+			})
+			vim.lsp.enable("glsl_analyzer")
+
 			vim.keymap.set("n", "gl", function()
 				vim.diagnostic.open_float()
 			end)

@@ -6,6 +6,7 @@ return {
             "javascriptreact",
             "typescript",
             "typescriptreact",
+            "astro",
             "html",
         },
         config = function()
