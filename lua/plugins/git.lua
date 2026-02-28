@@ -60,7 +60,4 @@ return {
             vim.keymap.set("n", "<leader>gb", "<CMD>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
         end
     },
-    {
-        'sindrets/diffview.nvim',
-    }
 }

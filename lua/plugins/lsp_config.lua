@@ -48,7 +48,7 @@ return {
 			})
 
 			vim.lsp.config("clangd", {
-				cmd = { "clangd", "--fallback-style=webkit" },
+				cmd = { "clangd", "--fallback-style=webkit", "--compile-commands-dir=build" },
 				capabilities = blink_capabilities,
 			})
 			vim.lsp.enable("clangd")

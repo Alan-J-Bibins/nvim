@@ -12,33 +12,6 @@ return {
 			})
 		end,
 	},
-	-- {
-	-- 	"A7Lavinraj/fyler.nvim",
-	-- 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	-- 	opts = {
-	-- 		default_explorer = true,
-	-- 		icon_provider = "nvim-web-devicons",
-	-- 		views = {
-	-- 			explorer = {
-	-- 				width = 0.3,
-	-- 				kind = "split:leftmost",
-	-- 			},
-	-- 		},
-	-- 		mappings = {
-	-- 			explorer = {
-	-- 				n = {
-	-- 					["q"] = "CloseView",
-	-- 					["<CR>"] = "Select",
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	},
-	--
-	-- 	config = function(_, opts)
-	-- 		require("fyler").setup(opts)
-	-- 		vim.keymap.set("n", "-", "<CMD>Fyler<CR>", { desc = "Open Fyler" })
-	-- 	end,
-	-- },
 	{
 		"tversteeg/registers.nvim",
 		cmd = "Registers",
@@ -141,24 +114,6 @@ return {
 			-- vim.keymap.set('n', '<C-S-h>', '<cmd>Treewalker SwapLeft<cr>', { silent = true })
 			-- vim.keymap.set('n', '<C-S-l>', '<cmd>Treewalker SwapRight<cr>', { silent = true })
 		end,
-	},
-	{
-		"07CalC/cook.nvim",
-		config = function()
-			require("cook").setup({
-				runners = {
-					py = "python3 %s",
-					c = "gcc %s -o %s && ./%s",
-					cpp = "g++ %s -o %s && ./%s",
-					rs = "cargo run",
-					js = "node %s",
-					ts = "node %s",
-					go = "go run %s",
-				},
-			})
-			vim.keymap.set("n", "<leader>cS", "<CMD>Cook<CR>", { desc = "Start COOKing" })
-		end,
-		cmd = "Cook",
 	},
 	{
 		"rareitems/printer.nvim",

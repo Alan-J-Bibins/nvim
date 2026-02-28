@@ -11,10 +11,12 @@
 -- 				enable = true,
 -- 			},
 -- 			jdk = {
--- 				auto_install = false,
+-- 				auto_install = true,
 -- 			},
 -- 		})
 -- 		vim.lsp.enable("jdtls")
 -- 	end,
 -- }
-return {}
+return {
+    "mfussenegger/nvim-jdtls"
+}
