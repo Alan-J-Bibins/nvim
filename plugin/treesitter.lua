@@ -6,6 +6,7 @@ vim.pack.add({
 require('nvim-treesitter').install {
     'rust',
     'javascript',
+    'typescript',
     'c',
     'cpp',
     'tsx',
@@ -17,3 +18,20 @@ require('nvim-treesitter').install {
     'java',
     'go',
 }
+
+-- vim.api.nvim_create_autocmd("FileType", {
+--     pattern = { "typescriptreact", "typescript", "tsx" },
+--     callback = function(args)
+--         vim.treesitter.start(args.buf)
+--     end,
+-- })
+--
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("EnableTreesitterHighlighting", { clear = true }),
+  desc = "Try to enable tree-sitter syntax highlighting",
+  pattern = "*", -- run on *all* filetypes
+  callback = function()
+    pcall(function() vim.treesitter.start() end)
+  end,
+})
