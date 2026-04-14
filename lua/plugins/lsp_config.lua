@@ -48,7 +48,14 @@ return {
 			})
 
 			vim.lsp.config("clangd", {
-				cmd = { "clangd", "--fallback-style=webkit", "--compile-commands-dir=build" },
+				cmd = {
+                    "clangd",
+                    "--fallback-style=webkit",
+                    "--compile-commands-dir=.",
+                    "--background-index",
+                    "-j=12",
+                    "--query-driver=/usr/bin/gcc,/usr/bin/g++,/usr/bin/clang*,/home/*/.platformio/packages/toolchain-xtensa-esp32/bin/xtensa-esp32-elf-*"
+                },
 				capabilities = blink_capabilities,
 			})
 			vim.lsp.enable("clangd")
