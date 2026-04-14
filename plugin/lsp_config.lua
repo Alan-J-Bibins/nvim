@@ -21,6 +21,7 @@ require('mason-tool-installer').setup({
         "ts_ls",
         "tailwindcss",
         "markdown_oxide",
+        "black",
     }
 })
 

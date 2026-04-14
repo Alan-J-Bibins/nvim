@@ -5,6 +5,9 @@ vim.pack.add({
     'https://github.com/folke/lazydev.nvim',
     'https://github.com/folke/snacks.nvim',
     'https://github.com/folke/trouble.nvim',
+    'https://github.com/nvim-lua/plenary.nvim', --dep for todo-comments.nvim
+    'https://github.com/folke/todo-comments.nvim',
+    'https://github.com/folke/ts-comments.nvim',
 })
 
 require("which-key").setup()
@@ -55,7 +58,7 @@ require('snacks').setup(
                 enabled = true, -- enable highlighting the current scope
                 priority = 200,
                 char = "│",
-                underline = false, -- underline the start of the scope
+                underline = false,    -- underline the start of the scope
                 only_current = false, -- only show scope in the current window
                 hl = "SnacksDashboardKey", ---@type string|string[] hl group for scopes
             },
@@ -204,7 +207,7 @@ require('trouble').setup({
             mode = "diagnostics", -- inherit from diagnostics mode
             filter = {
                 any = {
-                    buf = 0, -- current buffer
+                    buf = 0,                                      -- current buffer
                     {
                         severity = vim.diagnostic.severity.ERROR, -- errors only
                         -- limit to files in the current project
@@ -217,3 +220,30 @@ require('trouble').setup({
         },
     },
 })
+
+vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", {
+    desc = "Diagnostics (Trouble)"
+})
+
+vim.keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", {
+    desc = "Buffer Diagnostics (Trouble)"
+})
+
+vim.keymap.set("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", {
+    desc = "Symbols (Trouble)"
+})
+
+vim.keymap.set("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", {
+    desc = "LSP Definitions / references / ... (Trouble)"
+})
+
+vim.keymap.set("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", {
+    desc = "Location List (Trouble)"
+})
+
+vim.keymap.set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", {
+    desc = "Quickfix List (Trouble)"
+})
+
+require("todo-comments").setup()
+vim.keymap.set('n', '<leader>tc', '<cmd>TodoTelescope<CR>', { desc = "Open telescope for TODO comments" })

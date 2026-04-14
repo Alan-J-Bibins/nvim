@@ -7,6 +7,7 @@ vim.pack.add({
     'https://github.com/kevinhwang91/nvim-ufo',
     'https://github.com/gbprod/yanky.nvim',
     'https://github.com/luukvbaal/statuscol.nvim',
+    'https://github.com/windwp/nvim-ts-autotag',
 })
 
 require("neoscroll").setup({
@@ -64,7 +65,7 @@ vim.keymap.set("n", "zK", function()
     end
 end, { desc = "Peek Fold" })
 require("ufo").setup({
-    provider_selecter = function(bufnr, filetype, buftype)
+    provider_selecter = function()
         return { "lsp", "indent" }
     end,
 })
@@ -88,3 +89,5 @@ require("statuscol").setup({
         { text = { " ", builtin.foldfunc, " " }, click = "v:lua.ScFa" },
     },
 })
+
+require("nvim-ts-autotag").setup()
