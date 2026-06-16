@@ -16,6 +16,8 @@ conform.setup({
         zsh = { "shfmt" },
         go = { "gofmt" },
         qml = { "qmlformat" },
+        cpp = { "clang-format" },
+        c = { "clang-format" },
     },
     formatters = {
         qmlformat = {

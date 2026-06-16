@@ -3,6 +3,9 @@ vim.pack.add({
     'https://github.com/mason-org/mason.nvim',
     'https://github.com/mason-org/mason-lspconfig.nvim',
     'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
+    'https://github.com/folke/trouble.nvim', -- Dependency of kotlin.nvim
+    'https://github.com/stevearc/oil.nvim', -- Dependency of kotlin.nvim
+    'https://github.com/AlexandrosAlexiou/kotlin.nvim',
 })
 
 require('mason').setup()
@@ -14,7 +17,7 @@ require('mason-tool-installer').setup({
         "bashls",
         "eslint",
         "lua_ls",
-        "basedpyright",
+        "pyright",
         "clangd",
         "html",
         "cssls",
@@ -22,8 +25,11 @@ require('mason-tool-installer').setup({
         "tailwindcss",
         "markdown_oxide",
         "black",
+        "clang-format",
+        -- "qmlls"
     }
 })
+require('kotlin').setup()
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 local blink_capabilities = require("blink.cmp").get_lsp_capabilities()
@@ -44,6 +50,14 @@ vim.lsp.config("clangd", {
     },
     capabilities = blink_capabilities,
 })
+
+vim.lsp.config("qml-language-server", {
+    cmd = { "qml-language-server" },
+    filetypes = { "qml" },
+    root_markers = { { "qmldir", "shell.qml" }, ".git" },
+})
+
+vim.lsp.enable("qml-language-server")
 
 vim.keymap.set("n", "gl", function()
     vim.diagnostic.open_float()

@@ -247,3 +247,5 @@ vim.keymap.set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", {
 
 require("todo-comments").setup()
 vim.keymap.set('n', '<leader>tc', '<cmd>TodoTelescope<CR>', { desc = "Open telescope for TODO comments" })
+
+require("ts-comments").setup()
